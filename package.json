@@ -1,0 +1,36 @@
+{
+  "name": "form-validation",
+  "version": "1.0.0",
+  "private": true,
+  "skpm": {
+    "main": "form-validation.sketchplugin",
+    "manifest": "./manifest.json"
+  },
+  "scripts": {
+    "build": "npm run typescript:once && skpm-build",
+    "watch": "skpm-build --watch & npm run typescript",
+    "render": "skpm-build --watch --run & npm run typescript",
+    "render:once": "npm run typescript:once && skpm-build --run",
+    "typescript": "tsc --watch",
+    "typescript:once": "tsc",
+    "typescript:clean": "rm -rf ./.ts-compiled",
+    "postinstall": "npm run build && skpm-link"
+  },
+  "author": "Lloyd Wheeler <lloyd@lloydwheeler.co.uk>",
+  "license": "MIT",
+  "dependencies": {
+    "prop-types": "^15.5.8",
+    "react": "^16.3.2",
+    "react-dom": "^16.3.2",
+    "react-sketchapp": "^2.1.2",
+    "react-test-renderer": "^16.3.2"
+  },
+  "devDependencies": {
+    "@skpm/builder": "^0.4.0",
+    "@types/react": "^16.9.3",
+    "@types/react-dom": "^16.9.1",
+    "@types/react-sketchapp": "^0.12.4",
+    "extract-text-webpack-plugin": "^2.1.0",
+    "typescript": "^2.6.2"
+  }
+}

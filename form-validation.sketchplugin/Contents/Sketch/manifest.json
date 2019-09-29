@@ -1,0 +1,23 @@
+{
+  "compatibleVersion": 1,
+  "bundleVersion": 1,
+  "commands": [
+    {
+      "name": "react-sketchapp: Form Validation",
+      "identifier": "main",
+      "script": "main.js"
+    }
+  ],
+  "menu": {
+    "isRoot": true,
+    "items": [
+      "main"
+    ]
+  },
+  "version": "1.0.0",
+  "name": "form-validation",
+  "disableCocoaScriptPreprocessor": true,
+  "appcast": "https://raw.githubusercontent.com//master/.appcast.xml",
+  "author": "Lloyd Wheeler",
+  "authorEmail": "lloyd@lloydwheeler.co.uk"
+}
