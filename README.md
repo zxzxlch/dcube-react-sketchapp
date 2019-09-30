@@ -1,12 +1,12 @@
-# Form Validation
+# Shared Components
 
 ## How to use
 
-Download the example or [clone the repo](http://github.com/airbnb/react-sketchapp):
+Pull this repo:
 
 ```bash
-curl https://codeload.github.com/airbnb/react-sketchapp/tar.gz/master | tar -xz --strip=2 react-sketchapp-master/examples/form-validation
-cd form-validation
+git clone https://github.com/zxzxlch/dcube-shared-components.git
+cd dcube-shared-components
 ```
 
 Install the dependencies
@@ -15,16 +15,20 @@ Install the dependencies
 npm install
 ```
 
-Then, open Sketch and navigate to `Plugins → react-sketchapp: Form Validation`
-
-Run with live reloading in Sketch
+Open Sketch and run the `render` script.
 
 ```bash
 npm run render
 ```
 
-## The idea behind the example
+Any changes to the code will automatically update the currently opened Sketch file (the 2nd page will be overriden).
 
-`react-sketchapp` makes it simple to render all potential states of a web component to sketch.
+## Customise styles
 
-![examples-form-validation](https://cloud.githubusercontent.com/assets/1606253/25585002/5cff9264-2e90-11e7-80dc-101f10ecad6d.png)
+You can change the values in the following files:
+
+- `src/designSystem.ts`
+- `src/components/FileUpload.tsx`
+- `src/components/Button.tsx`
+
+Refer to React Sketchapp's [documentation](http://airbnb.io/react-sketchapp/docs/styling.html) for the full list of styles.
