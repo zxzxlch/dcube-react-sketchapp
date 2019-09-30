@@ -9,6 +9,7 @@ const styles = StyleSheet.create({
     color: colors.Ink,
     fontSize: typeRamp.Medium,
     fontFamily,
+    lineHeight: typeRamp.Medium * 1.4,
     marginBottom: spacing(1)
   },
   dropzone: {
@@ -41,12 +42,5 @@ const FileUpload = () => (
     </View>
   </View>
 );
-
-FileUpload.defaultProps = {
-  session: {
-    email: '',
-    password: ''
-  }
-};
 
 export default FileUpload;

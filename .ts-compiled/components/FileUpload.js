@@ -8,6 +8,7 @@ const styles = StyleSheet.create({
         color: colors.Ink,
         fontSize: typeRamp.Medium,
         fontFamily,
+        lineHeight: typeRamp.Medium * 1.4,
         marginBottom: spacing(1)
     },
     dropzone: {
@@ -37,10 +38,4 @@ const FileUpload = () => (<View name="File Upload">
       <Text style={styles['dropzone.label']}>or drag file in here</Text>
     </View>
   </View>);
-FileUpload.defaultProps = {
-    session: {
-        email: '',
-        password: ''
-    }
-};
 export default FileUpload;

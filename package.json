@@ -29,7 +29,6 @@
     "@skpm/builder": "^0.4.0",
     "@types/react": "^16.9.3",
     "@types/react-dom": "^16.9.1",
-    "@types/react-sketchapp": "^0.12.4",
     "extract-text-webpack-plugin": "^2.1.0",
     "typescript": "^2.6.2"
   }

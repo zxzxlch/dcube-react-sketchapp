@@ -1,16 +1,11 @@
 export const colors = {
     Primary: '#6037b3',
     Ink: '#000000',
-    Purple: '#5700a2',
-    Yellow: '#bb9a05',
-    Orange: '#fd6134',
-    Rose: '#ff4289',
-    Green: '#005b4c',
-    Black: '#222223',
+    White: '#ffffff',
     LightGrey: '#ababab',
-    DarkGrey: '#5a5a5a',
     Grey: '#cccccc',
-    White: '#ffffff'
+    DarkGrey: '#5a5a5a',
+    Black: '#222223'
 };
 export const spacing = (token) => token * 8;
 export const typeRamp = {

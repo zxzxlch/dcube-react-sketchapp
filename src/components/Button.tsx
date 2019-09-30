@@ -7,7 +7,7 @@ type Props = {
   label: string;
 };
 
-const baseStyle: Style = {
+const baseStyle = {
   paddingVertical: spacing(1.5),
   paddingHorizontal: spacing(2),
   borderWidth: 1,
@@ -17,7 +17,7 @@ const baseStyle: Style = {
   flexShrink: 1
 };
 
-const labelStyle: TextStyle = {
+const labelStyle = {
   color: colors.Primary,
   textAlign: 'center',
   fontFamily,
