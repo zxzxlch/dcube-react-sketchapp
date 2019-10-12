@@ -4,6 +4,7 @@ export const colors = {
   White: '#ffffff',
   'Grey-05': '#f7f7f7',
   'Grey-20': '#ababab',
+  'Grey-40': '#9c9c9c',
   'Grey-70': '#5a5a5a',
   Black: '#222223'
 };
@@ -24,7 +25,7 @@ export const fontFamily = 'Lato';
 export const typography = {
   Base: {
     fontFamily: fontFamily,
-    fontSize: typeRamp.Medium,
+    fontSize: typeRamp.Medium
   },
   Heading: {
     fontSize: typeRamp.Large,
@@ -64,7 +65,7 @@ export const baseStyles = {
     marginBottom: spacing(1)
   },
   FileInput: {
-    paddingVertical: spacing(2),
+    paddingVertical: spacing(4),
     paddingHorizontal: spacing(3),
     backgroundColor: colors.White,
     borderWidth: 1,
@@ -74,6 +75,18 @@ export const baseStyles = {
   'FileInput-Label': {
     color: colors['Grey-70'],
     fontSize: typeRamp.Medium
+  },
+  File: {
+    borderWidth: 1,
+    borderStyle: 'solid',
+    borderColor: colors['Grey-40'],
+    padding: spacing(2)
+  },
+  File_FileName: {
+    fontSize: typeRamp.Medium
+  },
+  File_FileSize: {
+    fontSize: typeRamp.Small
   }
 };
 

@@ -4,6 +4,7 @@ import { render, Artboard, Page } from 'react-sketchapp';
 import { colors, spacing } from './designSystem';
 import Space from './components/Space';
 import FileUpload from './components/FileUpload';
+import { FileProps } from './components/File';
 
 const styles = {
   desktop: {
@@ -17,12 +18,21 @@ const styles = {
   }
 };
 
+const files: FileProps[] = [
+  {
+    filename: 'new doc 2019-10-11 16.23.00_20191011164919 (1).png',
+    filesize: '820 Kb'
+  },
+  { filename: 'File02.pdf', filesize: '1.0 MB' },
+  { filename: 'File01.pdf', filesize: '203 Kb' }
+];
+
 const _Contents = () => {
   return (
     <Page>
       <Artboard name="Desktop/File Upload/Initial" style={styles.desktop}>
         <Space h={3} v={3}>
-          <FileUpload />
+          <FileUpload files={files} />
         </Space>
       </Artboard>
       <Artboard
@@ -38,7 +48,7 @@ const _Contents = () => {
         }}
       >
         <Space h={2} v={2}>
-          <FileUpload />
+          <FileUpload files={files} />
         </Space>
       </Artboard>
     </Page>

@@ -1,16 +1,23 @@
 // @flow
 import * as React from 'react';
-import { View, Text, StyleSheet } from 'react-sketchapp';
+import { View } from 'react-sketchapp';
 import FormLabel from './FormLabel';
 import FileInput from './FileInput';
-import { spacing, colors, typeRamp, fontFamily } from '../designSystem';
-import Button from './Button';
+import File, { FileProps } from './File';
+import { spacing } from '../designSystem';
 
-const FileUpload = () => (
+type Props = {
+  files: FileProps[];
+};
+
+const FileUpload = ({ files }: Props) => (
   <View name="File Upload">
     <FormLabel text="Upload file" />
     <FormLabel text="You can upload a file to this component. Try using drag and drop!" />
-    <FileInput />
+    <FileInput style={{ marginTop: spacing(2) }} />
+    {files.map((props, index) => (
+      <File key={index} {...props} style={{ marginTop: spacing(3) }} />
+    ))}
   </View>
 );
 
