@@ -2,9 +2,9 @@ export const colors = {
   Primary: '#6037b3',
   Ink: '#000000',
   White: '#ffffff',
-  LightGrey: '#ababab',
-  Grey: '#cccccc',
-  DarkGrey: '#5a5a5a',
+  'Grey-05': '#f7f7f7',
+  'Grey-20': '#ababab',
+  'Grey-70': '#5a5a5a',
   Black: '#222223'
 };
 
@@ -19,7 +19,13 @@ export const typeRamp = {
   xLarge: 36
 };
 
+export const fontFamily = 'Lato';
+
 export const typography = {
+  Base: {
+    fontFamily: fontFamily,
+    fontSize: typeRamp.Medium,
+  },
   Heading: {
     fontSize: typeRamp.Large,
     textAlign: 'center'
@@ -29,15 +35,11 @@ export const typography = {
   }
 };
 
-export const fontFamily = 'Lato';
-
 export const baseStyles = {
   Button: {
-    paddingVertical: spacing(1.5),
+    height: 48,
     paddingHorizontal: spacing(2),
     borderWidth: 1,
-    flexGrow: 0,
-    flexShrink: 1,
     backgroundColor: colors.Primary
   },
   Button_Secondary: {
@@ -54,7 +56,7 @@ export const baseStyles = {
   'Button-Label_Secondary': {
     color: colors.Primary
   },
-  Label: {
+  FormLabel: {
     color: colors.Ink,
     fontSize: typeRamp.Medium,
     fontFamily,
@@ -62,19 +64,15 @@ export const baseStyles = {
     marginBottom: spacing(1)
   },
   FileInput: {
-    height: 170,
-    flexDirection: 'column',
-    flexWrap: 'nowrap',
-    alignItems: 'center',
-    justifyContent: 'center',
-    backgroundColor: '#f7f7f7',
+    paddingVertical: spacing(2),
+    paddingHorizontal: spacing(3),
+    backgroundColor: colors.White,
     borderWidth: 1,
     borderStyle: 'dashed',
-    borderColor: colors.LightGrey
+    borderColor: colors['Grey-20']
   },
   'FileInput-Label': {
-    marginTop: spacing(2),
-    color: colors.DarkGrey,
+    color: colors['Grey-70'],
     fontSize: typeRamp.Medium
   }
 };
