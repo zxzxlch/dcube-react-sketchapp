@@ -31,4 +31,4 @@ You can change the values in the following files:
 - `src/components/FileUpload.tsx`
 - `src/components/Button.tsx`
 
-Refer to React Sketchapp's [documentation](http://airbnb.io/react-sketchapp/docs/styling.html) for the full list of styles.
+Refer to React Sketch.app's [documentation](http://airbnb.io/react-sketchapp/docs/styling.html) for the full list of styles.

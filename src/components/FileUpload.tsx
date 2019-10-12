@@ -37,7 +37,7 @@ const FileUpload = () => (
       You can upload a file to this component. Try using drag and drop!
     </Text>
     <View name="Dropzone" style={styles.dropzone}>
-      <Button label="Choose file" />
+      <Button variant='secondary' label="Choose file" />
       <Text style={styles['dropzone.label']}>or drag file in here</Text>
     </View>
   </View>

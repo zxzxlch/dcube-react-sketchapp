@@ -1,38 +1,32 @@
 // @flow
 import * as React from 'react';
-import { Text, View, TextStyle, Style } from 'react-sketchapp';
-import { spacing, colors, fontFamily, typeRamp } from '../designSystem';
+import Radium from 'radium';
+import { Text, View } from 'react-sketchapp';
+import { baseStyles } from '../designSystem';
 
 type Props = {
+  variant: 'primary' | 'secondary';
   label: string;
 };
 
-const baseStyle = {
-  paddingVertical: spacing(1.5),
-  paddingHorizontal: spacing(2),
-  borderWidth: 1,
-  borderStyle: 'solid',
-  borderColor: colors.Primary,
-  flexGrow: 0,
-  flexShrink: 1
-};
+const Button = ({ variant = 'primary', label }: Props) => (
+  <View
+    name="Button"
+    style={[
+      baseStyles.Button,
+      variant == 'secondary' && baseStyles.Button_Secondary
+    ]}
+  >
+    <Text
+      name="Label"
+      style={[
+        baseStyles['Button-Label'],
+        variant == 'secondary' && baseStyles['Button-Label_Secondary']
+      ]}
+    >
+      {label}
+    </Text>
+  </View>
+);
 
-const labelStyle = {
-  color: colors.Primary,
-  textAlign: 'center',
-  fontFamily,
-  fontSize: typeRamp.Medium
-};
-
-const Button = ({ label }: Props) => {
-  const styles = {};
-  return (
-    <View name="Button" style={{ ...baseStyle }}>
-      <Text name="Label" style={{ ...labelStyle }}>
-        {label}
-      </Text>
-    </View>
-  );
-};
-
-export default Button;
+export default Radium(Button);
