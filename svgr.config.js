@@ -8,7 +8,7 @@ module.exports = {
   ) {
     const typeScriptTpl = template.smart({ plugins: ['typescript'] });
     return typeScriptTpl.ast`
-    import React from 'react';
+    import * as React from 'react';
     import { Svg } from 'react-sketchapp';
     const ${componentName} = (props: any) => ${jsx};
     export default ${componentName};

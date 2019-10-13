@@ -1,7 +1,7 @@
 import * as React from 'react';
 import Radium from 'radium';
 import { render, Artboard, Page } from 'react-sketchapp';
-import { colors, spacing } from './designSystem';
+import { colors } from './designSystem';
 import Space from './components/Space';
 import FileUpload from './components/FileUpload';
 import { FileProps } from './components/File';
