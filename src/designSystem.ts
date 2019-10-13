@@ -6,7 +6,8 @@ export const colors = {
   'Grey-20': '#ababab',
   'Grey-40': '#9c9c9c',
   'Grey-70': '#5a5a5a',
-  Black: '#222223'
+  Black: '#222223',
+  Error: '#d0021b'
 };
 
 // 1 unit = 8px
@@ -33,6 +34,10 @@ export const typography = {
   },
   Label: {
     fontSize: typeRamp.Medium
+  },
+  FormError: {
+    fontSize: typeRamp.Medium,
+    color: colors.Error
   }
 };
 
@@ -82,11 +87,23 @@ export const baseStyles = {
     borderColor: colors['Grey-40'],
     padding: spacing(2)
   },
-  File_FileName: {
+  File_Progress: {
+    borderColor: colors['Grey-20']
+  },
+  File_Error: {
+    borderColor: colors.Error
+  },
+  'File-FileName': {
     fontSize: typeRamp.Medium
   },
-  File_FileSize: {
+  'File-FileName_Progress': {
+    color: colors['Grey-70']
+  },
+  'File-FileSize': {
     fontSize: typeRamp.Small
+  },
+  'File-FileSize_Progress': {
+    color: colors['Grey-70']
   }
 };
 

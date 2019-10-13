@@ -7,10 +7,14 @@ import { baseStyles, spacing, typography, colors } from '../designSystem';
 
 type Props = {
   style?: any;
+  errors?: string[];
 };
 
 const styles = {
   FileInput: {
+    flexDirection: 'column'
+  },
+  'FileInput-Field': {
     flexDirection: 'row',
     flexWrap: 'nowrap',
     alignItems: 'center',
@@ -22,29 +26,46 @@ const styles = {
   'FileInput-Label': {
     flexShrink: 1,
     marginLeft: spacing(1.5)
+  },
+  'FileInput-Error': {
+    marginTop: spacing(1.5)
   }
 };
 
-const FileInput = ({ style }: Props) => (
-  <View
-    name="File Input"
-    style={[style, styles.FileInput, baseStyles.FileInput]}
-  >
-    <Button
-      variant="secondary"
-      label="Choose file"
-      style={styles['FileInput-Button']}
-    />
+const FileInput = ({ style, errors = [] }: Props) => {
+  const errorText = errors.length > 0 && (
     <Text
-      style={[
-        typography.Base,
-        styles['FileInput-Label'],
-        baseStyles['FileInput-Label']
-      ]}
+      name="Error"
+      style={[typography.Base, typography.FormError, styles['FileInput-Error']]}
     >
-      or drag file in here
+      {errors.join('\n')}
     </Text>
-  </View>
-);
+  );
+
+  return (
+    <View name="File Input" style={[style, styles.FileInput]}>
+      <View
+        name="Field"
+        style={[styles['FileInput-Field'], baseStyles.FileInput]}
+      >
+        <Button
+          variant="secondary"
+          label="Choose file"
+          style={styles['FileInput-Button']}
+        />
+        <Text
+          style={[
+            typography.Base,
+            styles['FileInput-Label'],
+            baseStyles['FileInput-Label']
+          ]}
+        >
+          or drag file in here
+        </Text>
+      </View>
+      {errorText}
+    </View>
+  );
+};
 
 export default Radium(FileInput) as (prop: Props) => JSX.Element;

@@ -8,11 +8,16 @@ import CloseIconSvg from '../assets/TimesRegular';
 type Props = {
   filename: string;
   filesize: string;
+  status?: 'default' | 'progress' | 'error';
+  error?: string;
   style?: any;
 };
 
 const styles = {
-  File: {
+  Base: {
+    flexDirection: 'column'
+  },
+  'File-Field': {
     flexDirection: 'row',
     flexWrap: 'nowrap',
     alignItems: 'center',
@@ -31,27 +36,70 @@ const styles = {
     marginLeft: spacing(2),
     marginRight: spacing(1),
     fill: colors['Grey-70']
+  },
+  'File-Error': {
+    marginTop: spacing(1.5)
   }
 };
 
-const File = ({ filename, filesize, style }: Props) => (
-  <View name="File" style={[style, styles.File, baseStyles.File]}>
-    <View style={styles['File-Body']}>
-      <Text style={[typography.Base, baseStyles.File_FileName]}>
-        {filename}
-      </Text>
-      <Text style={[typography.Base, baseStyles.File_FileSize]}>
-        {filesize}
-      </Text>
+const File = ({
+  filename,
+  filesize,
+  status = 'default',
+  error,
+  style
+}: Props) => {
+  const isProgress = status == 'progress';
+  const isError = status == 'error';
+
+  const errorText = error && (
+    <Text
+      name="Error"
+      style={[typography.Base, typography.FormError, styles['File-Error']]}
+    >
+      {error}
+    </Text>
+  );
+
+  return (
+    <View name="File" style={[style, styles.Base]}>
+      <View
+        style={[
+          styles['File-Field'],
+          baseStyles.File,
+          isProgress ? baseStyles.File_Progress : undefined,
+          isError ? baseStyles.File_Error : undefined
+        ]}
+      >
+        <View style={styles['File-Body']}>
+          <Text
+            style={[
+              typography.Base,
+              baseStyles['File-FileName'],
+              isProgress ? baseStyles['File-FileName_Progress'] : undefined
+            ]}
+          >
+            {filename}
+          </Text>
+          <Text
+            style={[
+              typography.Base,
+              baseStyles['File-FileSize'],
+              isProgress ? baseStyles['File-FileSize_Progress'] : undefined
+            ]}
+          >
+            {filesize}
+          </Text>
+        </View>
+        <CloseIconSvg
+          fill={styles['File-CloseIcon'].fill}
+          style={[styles['File-CloseIcon']]}
+        />
+      </View>
+      {errorText}
     </View>
-    <CloseIconSvg
-      // width={16}
-      // height={16}
-      fill={styles['File-CloseIcon'].fill}
-      style={[styles['File-CloseIcon']]}
-    />
-  </View>
-);
+  );
+};
 
 export default Radium(File) as (prop: Props) => JSX.Element;
 export type FileProps = Props;
