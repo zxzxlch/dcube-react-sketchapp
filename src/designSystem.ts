@@ -41,7 +41,19 @@ export const typography = {
   }
 };
 
-export const baseStyles = {
+interface Styles {
+  [key: string]: any;
+}
+
+export const baseStyles: Styles = {
+  Icon: {
+    width: spacing(3),
+    height: spacing(3)
+  },
+  'Icon-Body': {
+    width: spacing(2),
+    height: spacing(2)
+  },
   Button: {
     height: 48,
     paddingHorizontal: spacing(2),
@@ -104,6 +116,10 @@ export const baseStyles = {
   },
   'File-FileSize_Progress': {
     color: colors['Grey-70']
+  },
+  'File-CloseIcon': {
+    marginLeft: spacing(2),
+    fill: colors['Grey-70']
   }
 };
 

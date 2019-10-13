@@ -4,6 +4,8 @@ import Radium from 'radium';
 import { Text, View } from 'react-sketchapp';
 import { baseStyles, typography, colors, spacing } from '../designSystem';
 import CloseIconSvg from '../assets/TimesRegular';
+import ProgressIconSvg from '../assets/SpinnerSolid';
+import Icon from './Icon';
 
 type Props = {
   filename: string;
@@ -28,14 +30,9 @@ const styles = {
     flexGrow: 1,
     flexShrink: 1
   },
-  'File-CloseIcon': {
-    width: spacing(2),
-    height: spacing(2),
+  'File-Icon': {
     flexGrow: 0,
-    flexShrink: 0,
-    marginLeft: spacing(2),
-    marginRight: spacing(1),
-    fill: colors['Grey-70']
+    flexShrink: 0
   },
   'File-Error': {
     marginTop: spacing(1.5)
@@ -51,6 +48,14 @@ const File = ({
 }: Props) => {
   const isProgress = status == 'progress';
   const isError = status == 'error';
+
+  const progressIcon = (
+    <Icon
+      svg={ProgressIconSvg}
+      fill={baseStyles['File-CloseIcon'].fill}
+      // style={baseStyles['File-CloseIcon']}
+    />
+  );
 
   const errorText = error && (
     <Text
@@ -91,9 +96,11 @@ const File = ({
             {filesize}
           </Text>
         </View>
-        <CloseIconSvg
-          fill={styles['File-CloseIcon'].fill}
-          style={[styles['File-CloseIcon']]}
+        {isProgress && progressIcon}
+        <Icon
+          svg={CloseIconSvg}
+          fill={baseStyles['File-CloseIcon'].fill}
+          style={baseStyles['File-CloseIcon']}
         />
       </View>
       {errorText}
