@@ -14,15 +14,17 @@ const styles = {
 };
 
 type Props = {
+  style?: any,
   variant: 'primary' | 'secondary';
   label: string;
 };
 
-const Button = ({ variant = 'primary', label }: Props) => (
+const Button = ({ variant = 'primary', label, style }: Props) => (
   <View
     name="Button"
     style={[
       styles.Button,
+      style,
       baseStyles.Button,
       variant == 'secondary' && baseStyles.Button_Secondary
     ]}

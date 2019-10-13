@@ -3,7 +3,7 @@ import * as React from 'react';
 import Radium from 'radium';
 import { Text, View } from 'react-sketchapp';
 import Button from './Button';
-import { baseStyles, spacing, typography } from '../designSystem';
+import { baseStyles, spacing, typography, colors } from '../designSystem';
 
 type Props = {
   style?: any;
@@ -16,7 +16,11 @@ const styles = {
     alignItems: 'center',
     justifyContent: 'flex-start'
   },
+  'FileInput-Button': {
+    flexShrink: 0
+  },
   'FileInput-Label': {
+    flexShrink: 1,
     marginLeft: spacing(1.5)
   }
 };
@@ -26,7 +30,11 @@ const FileInput = ({ style }: Props) => (
     name="File Input"
     style={[style, styles.FileInput, baseStyles.FileInput]}
   >
-    <Button variant="secondary" label="Choose file" />
+    <Button
+      variant="secondary"
+      label="Choose file"
+      style={styles['FileInput-Button']}
+    />
     <Text
       style={[
         typography.Base,

@@ -2,8 +2,8 @@
 import * as React from 'react';
 import Radium from 'radium';
 import { Text, View } from 'react-sketchapp';
-import Button from './Button';
-import { baseStyles, spacing, typography } from '../designSystem';
+import { baseStyles, typography, colors, spacing } from '../designSystem';
+import CloseIconSvg from '../assets/TimesRegular';
 
 type Props = {
   filename: string;
@@ -19,7 +19,18 @@ const styles = {
     justifyContent: 'flex-start'
   },
   'File-Body': {
-    flexDirection: 'column'
+    flexDirection: 'column',
+    flexGrow: 1,
+    flexShrink: 1
+  },
+  'File-CloseIcon': {
+    width: spacing(2),
+    height: spacing(2),
+    flexGrow: 0,
+    flexShrink: 0,
+    marginLeft: spacing(2),
+    marginRight: spacing(1),
+    fill: colors['Grey-70']
   }
 };
 
@@ -33,6 +44,12 @@ const File = ({ filename, filesize, style }: Props) => (
         {filesize}
       </Text>
     </View>
+    <CloseIconSvg
+      // width={16}
+      // height={16}
+      fill={styles['File-CloseIcon'].fill}
+      style={[styles['File-CloseIcon']]}
+    />
   </View>
 );
 
