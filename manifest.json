@@ -3,7 +3,7 @@
   "bundleVersion": 1,
   "commands": [
     {
-      "name": "react-sketchapp: Form Validation",
+      "name": "DCube Shared Components: Generate Template",
       "identifier": "main",
       "script": "./.ts-compiled/main.js"
     }

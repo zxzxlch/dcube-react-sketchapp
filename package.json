@@ -1,9 +1,9 @@
 {
-  "name": "form-validation",
+  "name": "dcube-shared-components",
   "version": "1.0.0",
   "private": true,
   "skpm": {
-    "main": "form-validation.sketchplugin",
+    "main": "form-dcube-shared-components.sketchplugin",
     "manifest": "./manifest.json"
   },
   "scripts": {
@@ -17,7 +17,7 @@
     "process:svg": "npx @svgr/cli --ext tsx -d src/assets assets",
     "postinstall": "npm run build && skpm-link"
   },
-  "author": "Lloyd Wheeler <lloyd@lloydwheeler.co.uk>",
+  "author": "Ben C <benjchb@gmail.com>",
   "license": "MIT",
   "dependencies": {
     "prop-types": "^15.5.8",
