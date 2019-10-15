@@ -1,6 +1,6 @@
 # Shared Components
 
-## How to use
+## Setting Up
 
 Pull this repo:
 
@@ -9,26 +9,28 @@ git clone https://github.com/zxzxlch/dcube-shared-components.git
 cd dcube-shared-components
 ```
 
-Install the dependencies
+Install the dependencies and TypeScript.
 
 ```bash
 npm install
+npm install -g typescript
 ```
 
-Open Sketch and run the `render` script.
+Open `assets/file-upload.sketch` and run the `render` script.
 
 ```bash
 npm run render
 ```
 
-Any changes to the code will automatically update the currently opened Sketch file (the 2nd page will be overriden).
+Any changes to the code will automatically update the currently opened Sketch file (page 3).
 
-## Customise styles
+## Customize Theme
 
-You can change the values in the following files:
+Try changing the theme and see how the styles change in the Sketch file.
 
-- `src/designSystem.ts`
-- `src/components/FileUpload.tsx`
-- `src/components/Button.tsx`
+```typescript
+// src/designSystem.ts
+export * from './themes/myLegacyTheme';
+```
 
-Refer to React Sketch.app's [documentation](http://airbnb.io/react-sketchapp/docs/styling.html) for the full list of styles.
+You can also create your own custom theme. Refer to React Sketch.app's [documentation](http://airbnb.io/react-sketchapp/docs/styling.html) for the full list of style attributes.
